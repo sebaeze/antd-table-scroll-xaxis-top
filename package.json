@@ -27,7 +27,8 @@
     "buildDistProduction": "NODE_ENV=production rollup -c rollup.config.js",
     "build": "tsc -p tsconfig.module.json && tsc -p tsconfig.declaration.json && yarn buildDistDevelopment && yarn buildDistProduction && cp type/* module/ && cp type/* dist/",
     "prepublishOnly": "yarn test && yarn build && standard-version",
-    "prepare": "husky install && playwright install"
+    "prepare": "husky install && playwright install",
+    "postinstall":"npm run build"
   },
   "files": [
     "module",
